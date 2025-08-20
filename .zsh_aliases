@@ -25,3 +25,7 @@ alias cat='bat'
 # less
 alias less='less -R'
 
+# Quick reloads
+alias src='source ~/.zshrc'
+alias reload='exec zsh'
+
