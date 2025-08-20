@@ -36,3 +36,8 @@ alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 
+
+# system info
+alias df='df -h'     # human-readable disk space
+alias du='du -h -c'  # human-readable folder sizes, with total
+alias free='vm_stat' # macOS doesn’t have Linux `free`, but this is the rough equivalent
