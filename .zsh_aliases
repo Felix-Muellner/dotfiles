@@ -12,3 +12,9 @@ alias mv-'mv -i'
 
 # grep quality of life
 alias grep='grep --color=auto'
+
+# navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
