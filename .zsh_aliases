@@ -19,3 +19,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias -- -='cd -'
 
+# bat
+alias cat='bat'
+
