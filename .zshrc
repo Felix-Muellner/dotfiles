@@ -4,6 +4,9 @@
 # Load aliases
 source ~/repos/dotfiles/.zsh_aliases
 
+# Enable HIST_IGNORE_SPACE
+setopt HIST_IGNORE_SPACE
+
 # Enable prompt expansion (needed for ${...} in PROMPT)
 setopt prompt_subst
 
