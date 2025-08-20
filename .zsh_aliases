@@ -4,6 +4,8 @@ alias ls='ls -p -G'
 alias ll='ls -lh'
 alias la='ls -A'
 alias lla='ls -lAh'
+# Show all file timestamps (atime, mtime, ctime, birth)
+alias llt='stat -f "Access: %Sa | Modify: %Sm | Change: %Sc | Birth: %SB | %N"'
 
 # saftey nets
 alias rm='rm -i'
