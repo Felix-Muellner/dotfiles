@@ -4,8 +4,23 @@
 # Load aliases
 source ~/repos/dotfiles/.zsh_aliases
 
-# Enable HIST_IGNORE_SPACE
+# --- History behavior settings ---
+# HIST_IGNORE_SPACE : don't save commands that start with a space
+# HIST_IGNORE_DUPS  : don't save duplicate commands
+# HIST_FIND_NO_DUPS : skip duplicates when searching with history expansion
 setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+
+# --- Unified history file ---
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
 
 # Enable prompt expansion (needed for ${...} in PROMPT)
 setopt prompt_subst
