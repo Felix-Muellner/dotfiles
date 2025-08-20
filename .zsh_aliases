@@ -1,4 +1,4 @@
 alias chrome="open -a \"Google Chrome\""
-alias ls='ls -p'
+alias ls='ls -p -G'
 alias ll='ls -lh'
 
