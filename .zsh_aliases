@@ -22,3 +22,6 @@ alias -- -='cd -'
 # bat
 alias cat='bat'
 
+# less
+alias less='less -R'
+
