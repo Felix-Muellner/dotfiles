@@ -42,3 +42,60 @@ alias gd='git diff'
 alias df='df -h'     # human-readable disk space
 alias du='du -h -c'  # human-readable folder sizes, with total
 alias free='vm_stat' # macOS doesn’t have Linux `free`, but this is the rough equivalent
+# ---------------------------------------------
+# Felix's zsh aliases — minimal, practical set
+# Notes:
+#  • These aliases are intended for INTERACTIVE use.
+#  • Base `ls` alias is macOS/BSD (`-G` for color). On Linux, use `--color=auto` instead of `-G`.
+# ---------------------------------------------
+
+# ---- Visual helpers & listing ----
+# Base ls: -p appends '/' to directories; -G enables color on macOS (BSD ls).
+alias ls='ls -p -G'
+# Common variants inherit -p -G from the base alias:
+alias ll='ls -lh'      # long listing, human sizes
+alias la='ls -A'       # include dotfiles except . and ..
+alias lla='ls -lAh'    # long + human + dotfiles
+
+# ---- Search / filtering ----
+alias grep='grep --color=auto'   # highlight matches when printing to a terminal
+
+# ---- Navigation ----
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias -- -='cd -'                # jump back to previous dir (toggle)
+
+# ---- Quick shell reloads ----
+alias src='source ~/.zshrc'      # re-read config in current shell
+alias reload='exec zsh'          # restart shell process cleanly
+
+# ---- Git shortcuts ----
+alias gs='git status'
+alias gl='git log --oneline --graph --decorate'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gd='git diff'
+# You can add: alias gds='git diff --staged'  # staged-only diff
+
+# ---- Safety nets ----
+alias rm='rm -i'                  # confirm before removing
+alias cp='cp -i'                  # confirm before overwriting
+alias mv='mv -i'                  # confirm before moving/overwriting
+
+# ---- File viewing / paging ----
+# Use bat if installed (syntax-highlighted 'cat'); falls back to cat otherwise.
+if command -v bat >/dev/null 2>&1; then
+  alias cat='bat'
+fi
+# Make less render ANSI colors (from grep/bat) correctly.
+alias less='less -R'
+
+# ---- System info ----
+alias df='df -h'                  # disk free (human-readable)
+alias du='du -h -c'               # directory sizes (human-readable + total)
+alias free='vm_stat'              # macOS memory stats (Linux 'free' equivalent)
+
+# ---- Apps ----
+alias chrome='open -a "Google Chrome"'
