@@ -29,3 +29,10 @@ alias less='less -R'
 alias src='source ~/.zshrc'
 alias reload='exec zsh'
 
+# git
+alias gs='git status'
+alias gl='git log --oneline --graph --decorate'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+
