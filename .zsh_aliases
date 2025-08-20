@@ -10,3 +10,5 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv-'mv -i'
 
+# grep quality of life
+alias grep='grep --color=auto'
