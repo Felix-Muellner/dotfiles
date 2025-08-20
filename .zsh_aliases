@@ -101,3 +101,11 @@ alias free='vm_stat'              # macOS memory stats (Linux 'free' equivalent)
 
 # ---- Apps ----
 alias chrome='open -a "Google Chrome"'
+
+# ---- Permissions helpers ----
+# Use descriptive aliases instead of chmod numbers
+
+alias chmod-private='chmod 600'   # only me: read/write
+alias chmod-shared='chmod 644'    # me: read/write, others: read
+alias chmod-exec='chmod 755'      # typical for scripts: me full, others read/execute
+alias chmod-lock='chmod 000'      # nobody can read/write/execute (lock a file)
