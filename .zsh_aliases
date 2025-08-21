@@ -7,6 +7,7 @@ alias lla='ls -lAh'
 # Show all file timestamps (atime, mtime, ctime, birth)
 alias llt='stat -f "Access: %Sa | Modify: %Sm | Change: %Sc | Birth: %SB | %N"'
 alias tree='tree -C'
+alias t2='tree -L 2'
 
 # saftey nets
 alias rm='rm -i'
