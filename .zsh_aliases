@@ -1,12 +1,11 @@
 # ls family
 alias chrome="open -a \"Google Chrome\""
-alias ls='ls -p -G'
+alias ls='ls -A -G -p'
 alias ll='ls -lh'
-alias la='ls -A'
 alias lla='ls -lAh'
 # Show all file timestamps (atime, mtime, ctime, birth)
 alias llt='stat -f "Access: %Sa | Modify: %Sm | Change: %Sc | Birth: %SB | %N"'
-alias tree='tree -C'
+alias tree='tree -a -C'
 alias t2='tree -L 2'
 
 # saftey nets
