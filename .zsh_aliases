@@ -52,3 +52,9 @@ alias chmod-lock='chmod 000'      # nobody can read/write/execute (lock a file)
 # ---- Permission display ----
 # Show files with permissions in a clear, detailed view
 alias llp='ls -lO@'   # long listing + show permissions, flags, and extended attributes
+
+#apps
+alias chrome='open -a "Google Chrome"'
+alias safari='open -a "Safari"'
+alias settings='open -a "System Settings"'
+alias intellij='open -a "Intellij IDEA"'
