@@ -59,7 +59,3 @@ alias safari='open -a "Safari"'
 alias settings='open -a "System Settings"'
 alias intellij='open -a "Intellij IDEA"'
 alias mail='open -a "Mail"'
-
-# ~/.zshrc
-# Turn off beeps only for completion
-zstyle ':completion:*:warnings' format ''
