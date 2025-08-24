@@ -52,7 +52,3 @@ precmd_functions+=(vcs_precmd)
 # ----------------------
 # odin-recipes (main) %
 PROMPT=$'\n==================================================\n''%1~ ${vcs_info_msg_0_} %# '
-
-# ~/.zshrc
-# Turn off beeps only for completion
-zstyle ':completion:*:warnings' format ''
