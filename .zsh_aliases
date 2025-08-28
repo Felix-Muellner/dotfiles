@@ -1,6 +1,6 @@
 #ls
 alias ls='ls -a -G -p'
-alias ll='ls-lh'
+alias ll='ls -lh'
 alias lla='ls -lAh'
 alias llt='stat -f "Access: %Sa | Modify: %Sm | Change: %Sc | Birth: %SB | %N"'
 alias tree='tree -a -C'
