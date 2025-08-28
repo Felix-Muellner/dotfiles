@@ -34,7 +34,7 @@ alias reload='exec zsh'
 
 #git
 alias gs='git status'
-alias gl='git log --oneline --graph --decorate'
+alias gl='git log --oneline --decorate --name-only '
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
