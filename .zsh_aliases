@@ -20,7 +20,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias -- -='cd -'
 alias dotfiles='cd ~/repos/dotfiles'
-alias cs='cd ~/Documents/education/jku/cs'
+alias cs='cd ~/Documents/education/jku/ws25'
 
 #bat
 alias cat='bat'
