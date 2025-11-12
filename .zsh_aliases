@@ -14,7 +14,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 #grep
-alias grep='grep --color-auto'
+alias grep='grep --color="auto"'
 
 #navigation
 alias ..='cd ..'
