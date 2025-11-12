@@ -5,6 +5,8 @@ alias lla='ls -lAh'
 alias llt='stat -f "Access: %Sa | Modify: %Sm | Change: %Sc | Birth: %SB | %N"'
 alias tree='tree -a -C'
 alias t2='tree -L 2'
+alias t3='tree -L 3'
+alias t4='tree -L 4'
 
 #safety nets
 alias rm='rm -i'
