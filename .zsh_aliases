@@ -62,3 +62,7 @@ alias safari='open -a "Safari"'
 alias settings='open -a "System Settings"'
 alias intellij='open -a "Intellij IDEA"'
 alias mail='open -a "Mail"'
+
+#pyenv configuration and setup
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
