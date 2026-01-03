@@ -16,6 +16,9 @@ alias mv='mv -i'
 #grep
 alias grep='grep --color="auto"'
 
+#path
+alias pathlist='echo $PATH | tr ":" "\n"'
+
 #navigation
 alias ..='cd ..'
 alias ...='cd ../..'
