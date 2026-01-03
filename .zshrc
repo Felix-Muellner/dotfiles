@@ -53,6 +53,3 @@ precmd_functions+=(vcs_precmd)
 # odin-recipes (main) %
 PROMPT=$'\n==================================================\n''%1~ ${vcs_info_msg_0_} %# '
 
-
-# Add IntelliJ IDEA launcher to PATH so 'idea' works in terminal
-export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
