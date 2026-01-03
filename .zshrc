@@ -1,6 +1,10 @@
 # =========================
 # Basic setup
 # =========================
+
+# Clean PATH
+export PATH="$HOME/.pyenv/shims:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # Load aliases
 source ~/repos/dotfiles/.zsh_aliases
 
