@@ -51,9 +51,9 @@ precmd_functions+=(vcs_precmd)
 # =========================
 # Prompt
 # =========================
-# Separator line + current dir + git branch + prompt symbol
+# Separator line + last 4 folders + current dir + git branch + prompt symbol
 # Example:
 # ----------------------
 # odin-recipes (main) %
-PROMPT=$'\n==================================================\n''%1~ ${vcs_info_msg_0_} %# '
+PROMPT=$'\n==================================================\n''%4~ ${vcs_info_msg_0_} %# '
 
