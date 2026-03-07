@@ -104,6 +104,17 @@ alias reload='exec zsh'
 
 
 # ---- System Info ----
+# Show key system info: OS, CPU, GPU, RAM, SSD, IP, logged-in users
+alias systeminfo='
+echo "=== System ==="; sw_vers;
+echo "=== CPU ==="; sysctl -n machdep.cpu.brand_string;
+echo "=== GPU ==="; system_profiler SPDisplaysDataType | grep "Chipset Model";
+echo "=== Memory ==="; sysctl -n hw.memsize | awk '\''{printf "%.2f GB\n",$1/1024/1024/1024}'\'' ;
+echo "=== Storage ==="; df -h / | tail -1 | awk '\''{print "Used: "$3", Avail: "$4", Total: "$2}'\'' ;
+echo "=== Network ==="; ipconfig getifaddr en0;
+echo "=== Users ==="; who;
+'
+
 # show disk usage in human-readable format
 alias df='df -h'
 
