@@ -1,43 +1,24 @@
-#ls
-alias ls='ls -a -G -p'
-alias ll='ls -lh'
-alias lla='ls -lAh'
-alias llt='stat -f "Access: %Sa | Modify: %Sm | Change: %Sc | Birth: %SB | %N"'
-alias tree='tree -a -C'
-alias t2='tree -L 2'
-alias t3='tree -L 3'
-alias t4='tree -L 4'
-
-#safety nets
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-
-#grep
-alias grep='grep --color="auto"'
-
-#path
-alias pathlist='echo $PATH | tr ":" "\n"'
-
-#navigation
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias -- -='cd -'
-alias dotfiles='cd ~/repos/dotfiles'
-alias cs='cd ~/Documents/education/jku/ss26'
-
-#bat
+# ---- Flags ----
+# -- cat --
 alias cat='bat'
 
-#less
-alias less='less -R'
+# -- chmod --
+# only me: read/write
+alias chmod-private='chmod 600'
 
-#Quick reloads
-alias src='source ~/.zshrc'
-alias reload='exec zsh'
+# me: read/write, others: read
+alias chmod-shared='chmod 644'
 
-#git
+# typical for scripts: me full, others read/execute
+alias chmod-exec='chmod 755'
+
+# nobody can read/write/execute (lock a file)
+alias chmod-lock='chmod 000'
+
+# -- cp --
+alias latex='cp ~/dev/templates/latex_template.tex ./'
+
+# -- git --
 alias gs='git status'
 alias gl='git log --oneline --decorate --name-only '
 alias ga='git add'
@@ -45,30 +26,107 @@ alias gc='git commit'
 alias gp='git push'
 alias gd='git diff'
 
-#system info
+# -- grep --
+# highlight matching text automatically
+alias grep='grep --color="auto"'
+
+# -- less --
+# allow raw control characters (e.g., colors) in output
+alias less='less -R'
+
+# -- ls --
+# show all files including hidden, colorize output, append / to directories
+alias ls='ls -a -G -p'
+
+# long listing with human-readable sizes
+alias ll='ls -lh'
+
+# long listing, human-readable, include hidden files
+alias lla='ls -lAh'
+
+# detailed timestamps for a file: access, modify, change, birth + filename
+alias llt='stat -f "Access: %Sa | Modify: %Sm | Change: %Sc | Birth: %SB | %N"'
+
+# Show files with permissions in a clear, detailed view
+# long listing + show permissions, flags, and extended attributes
+alias llp='ls -lO@'
+
+# -- tree --
+# show all files including hidden, colorize output
+alias tree='tree -a -C'
+
+# show tree up to 2 levels deep
+alias t2='tree -L 2'
+
+# show tree up to 3 levels deep
+alias t3='tree -L 3'
+
+# show tree up to 4 levels deep
+alias t4='tree -L 4'
+
+
+
+# ---- Saftey Nets ----
+# interactive remove: prompts before deleting files
+alias rm='rm -i'
+
+# interactive copy: prompts before overwriting files
+alias cp='cp -i'
+
+# interactive move: prompts before overwriting files
+alias mv='mv -i'
+
+
+
+# ---- PATH ----
+# print each entry in $PATH on a separate line
+alias pathlist='echo $PATH | tr ":" "\n"'
+
+
+
+# ---- Navigation ----
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias -- -='cd -'
+alias dotfiles='cd ~/repos/dotfiles'
+alias cs='cd ~/Documents/education/jku/ss26'
+
+
+
+# ---- Quick Reloads ----
+# reload current shell configuration without restarting the terminal
+alias src='source ~/.zshrc'
+
+# restart the shell completely
+alias reload='exec zsh'
+
+
+
+# ---- System Info ----
+# show disk usage in human-readable format
 alias df='df -h'
+
+# show directory/file sizes in human-readable format and total at the end
 alias du='du -h -c'
+
+# custom memory/VM stats (replaces 'free' command)
 alias free='va_stat'
 
-alias chmod-private='chmod 600'   # only me: read/write
-alias chmod-shared='chmod 644'    # me: read/write, others: read
-alias chmod-exec='chmod 755'      # typical for scripts: me full, others read/execute
-alias chmod-lock='chmod 000'      # nobody can read/write/execute (lock a file)
 
-# ---- Permission display ----
-# Show files with permissions in a clear, detailed view
-alias llp='ls -lO@'   # long listing + show permissions, flags, and extended attributes
 
-#apps
+# ---- Open Apps ----
 alias chrome='open -a "Google Chrome"'
 alias safari='open -a "Safari"'
 alias settings='open -a "System Settings"'
 alias intellij='open -a "Intellij IDEA"'
 alias mail='open -a "Mail"'
 
-#pyenv configuration and setup
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
-#latex
-alias latex='cp ~/dev/templates/latex_template.tex ./'
+
+# ---- pyenv configuration and setup ----
+# initialize pyenv for managing Python versions
+eval "$(pyenv init -)"
+
+# enable pyenv-virtualenv integration for automatic virtualenv activation
+eval "$(pyenv virtualenv-init -)"
