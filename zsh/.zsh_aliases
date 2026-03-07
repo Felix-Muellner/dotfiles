@@ -69,3 +69,6 @@ alias mail='open -a "Mail"'
 #pyenv configuration and setup
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+#latex
+alias latex='cp ~/dev/templates/latex_template.tex ./'
