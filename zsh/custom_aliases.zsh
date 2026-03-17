@@ -16,3 +16,8 @@ alias t3='tree -L 3'
 
 # show tree up to 4 levels deep
 alias t4='tree -L 4'
+
+
+# --- LaTeX ---
+# template copy
+alias ltx='cp $HOME/dev/templates/latex_template.tex .'
