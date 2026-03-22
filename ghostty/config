@@ -1,3 +1,15 @@
 theme = "Catppuccin Mocha"
 
 font-size = 14
+
+# First, unbind the conflicting defaults (Optional but cleaner)
+keybind = cmd+opt+up=unbind
+keybind = cmd+opt+down=unbind
+keybind = cmd+opt+left=unbind
+keybind = cmd+opt+right=unbind
+
+# Set new navigation shortcuts (e.g., using Ctrl + hjkl)
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:down
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+l=goto_split:right
