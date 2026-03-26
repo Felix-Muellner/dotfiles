@@ -4,6 +4,8 @@ alias cs='cd $HOME/Documents/education/jku/ss26'
 
 alias dev='cd $HOME/dev'
 
+alias work='cd ~/Documents/work/Controllerbox'
+
 # -- tree --
 # show all files including hidden, colorize output
 alias tree='tree -a -C'
