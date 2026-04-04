@@ -1,5 +1,4 @@
 # --- Navigation ---
-
 alias cs='cd $HOME/Documents/education/jku/ss26'
 
 alias dev='cd $HOME/dev'
@@ -25,3 +24,6 @@ alias rm='rm -i'
 # --- LaTeX ---
 # template copy
 alias ltx='cp $HOME/dev/templates/latex_template.tex .'
+
+# --- ls ---
+alias ls='ls -pG'
