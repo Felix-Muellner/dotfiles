@@ -121,6 +121,6 @@ source $ZSH/oh-my-zsh.sh
 setopt LIST_TYPES
 
 # Path configuration
-export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/bin:/Users/felix/.local/bin:$PATH"
 
 typeset -U path
