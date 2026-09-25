@@ -5,7 +5,7 @@ alias dev='cd $HOME/dev'
 
 alias work='cd ~/Documents/work/Controllerbox'
 
-alias htl='cd ~/Documents/office/education/htl_leonding'
+alias htl='cd ~/Documents/education/htl'
 
 # -- tree --
 # show all files including hidden, colorize output
