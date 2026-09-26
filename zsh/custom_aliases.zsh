@@ -29,3 +29,6 @@ alias ltx='cp $HOME/dev/templates/latex_template.tex .'
 
 # --- ls ---
 alias ls='ls -pG'
+
+# --- vim ---
+alias vim='nvim'
