@@ -1,3 +1,3 @@
 # dotfiles
 
-Personal shell and tool configuration files.
+Personal shell configuration and tool files.
