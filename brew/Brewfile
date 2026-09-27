@@ -12,6 +12,8 @@ brew "glow"
 brew "neovim"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.14"
 # Display directories as trees (with optional color/HTML output)
@@ -31,5 +33,6 @@ cask "ghostty"
 vscode "ms-dotnettools.csdevkit"
 vscode "ms-dotnettools.csharp"
 vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "tomoki1207.pdf"
 vscode "vscodevim.vim"
 vscode "yzane.markdown-pdf"
