@@ -1,11 +1,17 @@
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
 # Distributed revision control system
 brew "git"
-# Development kit for the Java programming language
-brew "openjdk"
-# Java-based project management
-brew "maven"
+# Render markdown on the CLI
+brew "glow"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.14"
 # Display directories as trees (with optional color/HTML output)
@@ -14,10 +20,16 @@ brew "tree"
 brew "uv"
 # Vi 'workalike' with many additional features
 brew "vim"
-# Developer platform
-cask "dotnet-sdk"
+# Internet file retriever
+brew "wget"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Compact TeX distribution as alternative to the full TeX Live / MacTeX
+cask "basictex"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Full TeX Live distribution without GUI applications
-cask "mactex-no-gui"
-vscode "james-yu.latex-workshop"
+vscode "ms-dotnettools.csdevkit"
+vscode "ms-dotnettools.csharp"
+vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "vscodevim.vim"
+vscode "yzane.markdown-pdf"
