@@ -11,14 +11,15 @@ alias htl='cd ~/Documents/education/htl'
 # show all files including hidden, colorize output
 alias tree='tree -a -C'
 
-# show tree up to 2 levels deep
+# tree levels
 alias t2='tree -L 2'
-
-# show tree up to 3 levels deep
 alias t3='tree -L 3'
-
-# show tree up to 4 levels deep
 alias t4='tree -L 4'
+alias t4='tree -L 5'
+alias t4='tree -L 6'
+alias t4='tree -L 7'
+alias t4='tree -L 8'
+alias t4='tree -L 9'
 
 # -- rm --
 alias rm='rm -i'
