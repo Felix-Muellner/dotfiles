@@ -34,3 +34,6 @@ alias ls='ls -pG'
 # --- nvim ---
 alias vim='nvim'
 alias vimdiff='nvim -d'
+
+# --- git ---
+alias glf='git ls-files'
