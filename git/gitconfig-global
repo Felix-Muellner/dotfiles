@@ -1,8 +1,11 @@
 [user]
 	name = Felix-Muellner
 	email = 224278306+Felix-Muellner@users.noreply.github.com
+	
 [core]
 	autocrlf = input
 	editor = nvim
+	excludesfile = .gitignore-global
+
 [init]
 	defaultBranch = main
