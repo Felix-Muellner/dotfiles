@@ -14,3 +14,59 @@
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Documents & Office Files (plus Word/Excel lock files)
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+~$*
+
+# Compressed Archives & Disk Images
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.dmg
+*.iso
+*.pkg
+
+# Heavy Media (Video & Audio)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.mp3
+*.wav
+*.flac
+
+# Databases & Raw Data Dumps
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+*.bak
+*.mdb
+
+# Logs & Crash Dumps
+*.log
+*.dmp
+*.heapsnapshot
+
+# Secrets, Keys & Local Env (Safety Net)
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Editor Backups & Swap Files
+*.swp
+*.swo
+*~
