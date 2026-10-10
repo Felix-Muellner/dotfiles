@@ -1,6 +1,6 @@
 theme = "Catppuccin Mocha"
 
-font-size = 14
+font-size = 30
 
 # First, unbind the conflicting defaults (Optional but cleaner)
 keybind = cmd+opt+up=unbind
