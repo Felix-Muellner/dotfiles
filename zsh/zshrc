@@ -39,6 +39,7 @@ eval "$(starship init zsh)"
 # Define command shortcuts, drop-in replacements, and shell functions.
 # ==============================================================================
 
+source ~/.zsh_aliases
 
 # ==============================================================================
 # 6. INTERACTIVE SYNTAX & SUGGESTION PLUGINS (Strictly Last)
