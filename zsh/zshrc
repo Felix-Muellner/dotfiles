@@ -21,6 +21,8 @@ export VISUAL="hx"
 # Initialize Zsh completion system (compinit) and custom completion styles.
 # ==============================================================================
 
+zmodload zsh/complist
+
 # Enable Completion System
 autoload -Uz compinit && compinit
 
