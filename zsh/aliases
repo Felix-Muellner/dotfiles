@@ -4,6 +4,7 @@
 
 alias dev='cd ~/dev'
 alias htl='cd ~/Documents/education/htl'
+alias dot='cd ~/dev/shell/dotfiles'
 
 # ---rm
 alias rm='rm -i'
