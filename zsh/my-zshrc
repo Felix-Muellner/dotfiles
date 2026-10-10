@@ -21,6 +21,11 @@ export VISUAL="hx"
 # Initialize Zsh completion system (compinit) and custom completion styles.
 # ==============================================================================
 
+# Enable Completion System
+autoload -Uz compinit && compinit
+
+# Enable simple interactive arrow-key menu selection
+zstyle ':completion:*' menu select
 
 # ==============================================================================
 # 4. TOOL INITIALIZATIONS & INTEGRATIONS
