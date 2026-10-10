@@ -1,0 +1,35 @@
+# My Custom Aliases
+
+# ---Navigation
+
+alias dev='cd ~/dev'
+alias htl='cd ~/Documents/education/htl'
+
+# ---Tree
+
+# show all files including hidden, colorize output
+alias tree='tree -a -C'
+
+# tree levels
+alias t2='tree -L 2'
+alias t3='tree -L 3'
+alias t4='tree -L 4'
+alias t5='tree -L 5'
+alias t6='tree -L 6'
+alias t7='tree -L 7'
+alias t8='tree -L 8'
+alias t9='tree -L 9'
+
+# ---rm
+alias rm='rm -i'
+
+# ---git
+alias g='git'
+alias gst='git status'
+alias ga='git add'
+alias gc='git commit --message'
+alias gp='git push'
+alias gl='git pull'
+alias glo='git log --oneline --decorate'
+alias grs='git restore'
+alias gsw='git switch'
