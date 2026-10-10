@@ -1,1 +1,35 @@
+# ==============================================================================
+# 1. ENVIRONMENT & PATH EXPORTS
+# Set environment variables, $PATH modifications, and runtime configurations.
+# ==============================================================================
+
+
+# ==============================================================================
+# 2. SHELL OPTIONS (setopt)
+# Configure shell behavior, directory navigation, and history rules.
+# ==============================================================================
+
+
+# ==============================================================================
+# 3. COMPLETIONS
+# Initialize Zsh completion system (compinit) and custom completion styles.
+# ==============================================================================
+
+
+# ==============================================================================
+# 4. TOOL INITIALIZATIONS & INTEGRATIONS
+# Hook interactive CLIs, prompt engines (Starship), and tools into the shell.
+# ==============================================================================
 eval "$(starship init zsh)"
+
+
+# ==============================================================================
+# 5. ALIASES & CUSTOM FUNCTIONS
+# Define command shortcuts, drop-in replacements, and shell functions.
+# ==============================================================================
+
+
+# ==============================================================================
+# 6. INTERACTIVE SYNTAX & SUGGESTION PLUGINS (Strictly Last)
+# ZLE plugins (autosuggestions, syntax-highlighting). Must load at the very end.
+# ==============================================================================
