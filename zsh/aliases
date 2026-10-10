@@ -33,3 +33,7 @@ alias gl='git pull'
 alias glo='git log --oneline --decorate'
 alias grs='git restore'
 alias gsw='git switch'
+
+# ------modern CLI replacements
+alias cat='bat'
+alias ls='eza -lah --icons --git'
