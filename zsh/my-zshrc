@@ -6,6 +6,10 @@
 # Homebrew path configuration
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Standard Editor
+export EDITOR="hx"
+export VISUAL="hx"
+
 # ==============================================================================
 # 2. SHELL OPTIONS (setopt)
 # Configure shell behavior, directory navigation, and history rules.
