@@ -5,21 +5,6 @@
 alias dev='cd ~/dev'
 alias htl='cd ~/Documents/education/htl'
 
-# ---Tree
-
-# show all files including hidden, colorize output
-alias tree='tree -a -C'
-
-# tree levels
-alias t2='tree -L 2'
-alias t3='tree -L 3'
-alias t4='tree -L 4'
-alias t5='tree -L 5'
-alias t6='tree -L 6'
-alias t7='tree -L 7'
-alias t8='tree -L 8'
-alias t9='tree -L 9'
-
 # ---rm
 alias rm='rm -i'
 
@@ -33,7 +18,25 @@ alias gl='git pull'
 alias glo='git log --oneline --decorate'
 alias grs='git restore'
 alias gsw='git switch'
+alias gd='git diff'
 
 # ------modern CLI replacements
 alias cat='bat'
-alias ls='eza -lah --icons --git'
+
+export EZA_ICONS_AUTO=1
+
+# Listings
+alias ls="eza"
+alias ll="eza -lh"
+alias la="eza -lah --git"
+
+# Tree views
+alias tree="eza -a --tree"
+alias t2="eza -a --tree --level=2"
+alias t3="eza -a --tree --level=3"
+alias t4="eza -a --tree --level=4"
+alias t5="eza -a --tree --level=5"
+alias t6="eza -a --tree --level=6"
+alias t7="eza -a --tree --level=7"
+alias t8="eza -a --tree --level=8"
+alias t9="eza -a --tree --level=9"
