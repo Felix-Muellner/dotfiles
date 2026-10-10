@@ -2,7 +2,7 @@
 # 1. ENVIRONMENT & PATH EXPORTS
 # Set environment variables, $PATH modifications, and runtime configurations.
 # ==============================================================================
-
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # ==============================================================================
 # 2. SHELL OPTIONS (setopt)
