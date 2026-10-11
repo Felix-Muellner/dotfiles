@@ -6,6 +6,9 @@
 # Homebrew path configuration
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Zoxide Setup
+eval "$(/opt/homebrew/bin/zoxide init zsh)"
+
 # Standard Editor
 export EDITOR="hx"
 export VISUAL="hx"
