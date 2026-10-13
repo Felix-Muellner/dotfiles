@@ -4,7 +4,7 @@
 	
 [core]
 	autocrlf = input
-	editor = nvim
+	editor = hx
 	excludesfile = ~/.gitignore-global
 
 [init]
