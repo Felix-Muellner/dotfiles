@@ -16,6 +16,10 @@ brew "glow"
 brew "helix"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Painless compression and decompression for your terminal
+brew "ouch"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # PDF rendering library (based on the xpdf-3.0 code base)
@@ -24,6 +28,8 @@ brew "poppler"
 brew "python@3.14"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Find and verify credentials
+brew "trufflehog"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Vi 'workalike' with many additional features
@@ -40,10 +46,12 @@ brew "zsh"
 cask "basictex"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+vscode "esbenp.prettier-vscode"
 vscode "humao.rest-client"
 vscode "ms-dotnettools.csdevkit"
 vscode "ms-dotnettools.csharp"
 vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "oracle.sql-developer"
+vscode "shd101wyy.markdown-preview-enhanced"
 vscode "tomoki1207.pdf"
-vscode "vscodevim.vim"
 vscode "yzane.markdown-pdf"
