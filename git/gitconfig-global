@@ -12,3 +12,5 @@
 [pull]
 	rebase = true
 	autoStash = true
+[fetch]
+	prune = true
