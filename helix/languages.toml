@@ -10,3 +10,11 @@ language-servers = ["tsc-native"]
 name = "typescript"
 language-servers = ["tsc-native"]
 
+[[language]]
+name = "tsx"
+language-servers = ["tsc-native"]
+
+[[language]]
+name = "jsx"
+language-servers = ["tsc-native"]
+
