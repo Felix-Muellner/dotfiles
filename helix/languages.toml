@@ -1,0 +1,12 @@
+[language-server.tsc-native]
+command = "npx"
+args = ["tsc", "--lsp", "--stdio"]
+
+[[language]]
+name = "javascript"
+language-servers = ["tsc-native"]
+
+[[language]]
+name = "typescript"
+language-servers = ["tsc-native"]
+
