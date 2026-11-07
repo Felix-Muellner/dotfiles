@@ -42,3 +42,6 @@ alias t6="eza -a --tree --level=6"
 alias t7="eza -a --tree --level=7"
 alias t8="eza -a --tree --level=8"
 alias t9="eza -a --tree --level=9"
+
+# YouTube
+alias ytdl='yt-dlp -S "vcodec:h264,acodec:aac" --merge-output-format mp4'
