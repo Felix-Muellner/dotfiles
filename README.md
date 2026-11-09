@@ -29,6 +29,11 @@ Also installed (used directly, not aliased): [fd](https://github.com/sharkdp/fd)
 ### Development & Version Control
 * **Editor:** [helix](https://github.com/helix-editor/helix), set as `$EDITOR` and `$VISUAL`. Modal editing like Vim, without the configuration overhead.
 * **Git:** `git pull` rebases instead of creating merge commits (`pull.rebase = true`), and uncommitted changes are stashed and restored automatically during a pull (`autoStash = true`).
+* **Git defaults:**
+  * `core.autocrlf = input` converts Windows (CRLF) line endings to LF on commit.
+  * `init.defaultBranch = main` makes new repositories start on `main`.
+  * `fetch.prune = true` removes local references to branches that were deleted on the remote.
+  * Commits use my GitHub noreply email address, so my real email isn't exposed.
 
 ## 🔒 Security & Best Practices
 
@@ -42,7 +47,7 @@ Also installed (used directly, not aliased): [fd](https://github.com/sharkdp/fd)
 
 All tools, including zsh itself, are installed with Homebrew.
 
-To set up this environment on a new Mac:
+To set up this environment on a new Mac (Apple Silicon only: `zshrc` expects Homebrew in `/opt/homebrew`):
 ```bash
 # 1. Install Homebrew
 # 2. Clone this repository
