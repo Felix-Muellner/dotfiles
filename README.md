@@ -1,57 +1,67 @@
-# 💻 macOS Dotfiles & Environment Architecture
+# 💻 macOS Dotfiles
 
-**Minimalist, Version-Controlled System Configuration & Developer Environment**
+**My version-controlled shell, editor and terminal setup**
 
-This repository tracks the evolution of my personal CLI environment and system architecture. What began as an exploration of basic shell commands in Spring 2025 has been systematically refactored into a lean, reproducible, and version-controlled configuration. 
+This repository tracks how my CLI environment has evolved. It started in Spring 2025 as a way to learn basic shell commands and has since become a small, reproducible setup that I keep under version control.
 
-The current architecture (as of late 2026) prioritizes speed, security, and reduced cognitive load by replacing legacy POSIX utilities with modern, optimized alternatives.
+The current setup (late 2026) aims to be fast, simple and easy to understand. Several default command-line tools are swapped for modern alternatives.
 
 ## 🚀 Evolution & AI-Assisted Learning
 
-My initial environment relied on massive, pre-configured frameworks like Oh My Zsh and Powerlevel10k. While functional out of the box, they quickly became bloated, introduced difficult-to-debug latency issues, and ultimately obscured how the shell actually worked. 
+My first setup used big pre-configured frameworks like Oh My Zsh and Powerlevel10k. They worked out of the box, but they got bloated, made the shell slow in ways that were hard to debug, and hid how the shell actually works.
 
-To resolve this, I abandoned the frameworks and rebuilt my environment entirely from scratch. Throughout this 1.5-year process, I heavily utilized LLMs as interactive technical guides. This allowed me to rapidly learn underlying POSIX mechanics, deeply understand `$PATH` execution priorities, and architect a custom system instead of relying on black-box plugins.
+So I dropped the frameworks and rebuilt everything from scratch. Over about 1.5 years I used LLMs as interactive guides, which helped me learn how the shell works underneath (for example, how `$PATH` decides which program runs) and build my own config instead of relying on plugins I didn't understand.
 
-## 🏗️ Core Architecture & Tooling
+## 🏗️ Tools & Configuration
 
-### Terminal & Shell Environment
-* **Terminal Emulator:** [Ghostty](https://mitchellh.com/ghostty) – Configured with a Catppuccin Mocha theme and custom split-pane multiplexing (`ctrl+h/j/k/l`) for rapid navigation.
-* **Shell & Prompt:** `zsh` initialized with the cross-shell [starship](https://github.com/starship/starship) prompt engine for contextual repository status.
-* **Navigation:** [zoxide](https://github.com/ajeetdsouza/zoxide) integrated directly into the shell for smart, algorithm-based directory jumping.
+### Terminal & Shell
+* **Terminal:** [Ghostty](https://mitchellh.com/ghostty) with the Catppuccin Mocha theme and `ctrl+h/j/k/l` to move between split panes.
+* **Shell & Prompt:** `zsh` with the [starship](https://github.com/starship/starship) prompt, which shows Git status for the current repository.
+* **Navigation:** [zoxide](https://github.com/ajeetdsouza/zoxide) jumps to directories by frecency: it ranks them by how often and how recently I've visited them.
 
-### Modern CLI Replacements (Rust-based)
-To improve performance and developer experience, standard GNU utilities are aliased to modern alternatives:
-* `ls` → [eza](https://github.com/eza-community/eza) (Configured with automated icons, git status integration, and nested tree views).
-* `cat` → [bat](https://github.com/sharkdp/bat) (Syntax highlighting and Git integration).
-* `find` → [fd](https://github.com/sharkdp/fd) (Fast, user-friendly alternative).
-* Markdown rendering via [glow](https://github.com/charmbracelet/glow) and archive management via `ouch`.
+### Modern CLI Replacements
+Some default commands are aliased to modern alternatives:
+* `ls` → [eza](https://github.com/eza-community/eza) (icons, a Git status column in `la`, and tree views via `tree` / `t2`–`t9`).
+* `cat` → [bat](https://github.com/sharkdp/bat) (syntax highlighting and Git integration).
+
+Also installed (used directly, not aliased): [fd](https://github.com/sharkdp/fd) as a faster `find`, [glow](https://github.com/charmbracelet/glow) for rendering Markdown, and `ouch` for compressing and extracting archives.
 
 ### Development & Version Control
-* **Primary Editor:** [helix](https://github.com/helix-editor/helix) (Set globally as `$EDITOR` and `$VISUAL`), leveraging modal editing without the configuration overhead of traditional Vim.
-* **Git Workflow:** Configured for strict linear history (`pull.rebase = true` and `autoStash = true`). 
-* **Development Environments:** Automated pathing, runtime resolution, and package management configured to dynamically support diverse language ecosystems and tech stacks.
+* **Editor:** [helix](https://github.com/helix-editor/helix), set as `$EDITOR` and `$VISUAL`. Modal editing like Vim, without the configuration overhead.
+* **Git:** `git pull` rebases instead of creating merge commits (`pull.rebase = true`), and uncommitted changes are stashed and restored automatically during a pull (`autoStash = true`).
+* **Git defaults:**
+  * `core.autocrlf = input` converts Windows (CRLF) line endings to LF on commit.
+  * `init.defaultBranch = main` makes new repositories start on `main`.
+  * `fetch.prune = true` removes local references to branches that were deleted on the remote.
+  * Commits use my GitHub noreply email address, so my real email isn't exposed.
 
 ## 🔒 Security & Best Practices
 
-A major focus of this configuration is enforcing strict security and hygiene baselines across the operating system:
-* **SSH Hardening:** Strict `HashKnownHosts yes` enforced in the `.ssh/config` to mitigate tracking and spoofing, with automated Apple Keychain integration for GitHub `ed25519` identity keys.
-* **Credential Protection:** [trufflehog](https://github.com/trufflesecurity/trufflehog) installed via Brew for finding and verifying exposed credentials before commits.
-* **Global Git Ignore:** A comprehensive `~/.gitignore-global` blocking the accidental upload of `.env` files, `.pem`/`.key` certificates, SQLite databases, and OS-level `.DS_Store` junk.
-* **CI/CD & Automated Security (GitHub Actions):** To enforce credential hygiene beyond the local environment, I implemented a foundational CI/CD pipeline. Using AI as a technical guide, I configured a `security.yml` action that runs a remote TruffleHog scan on pushes and pull requests to the `main` branch. This acts as a post-push auditing layer that complements GitHub's native secret scanning features, which I have also actively enabled for this public repository.
+* **SSH:** `HashKnownHosts yes` stores hostnames in `~/.ssh/known_hosts` as hashes, so if the file leaks, nobody can read which servers I connect to. The GitHub `ed25519` key is loaded into the SSH agent and its passphrase is stored in the macOS Keychain.
+* **Secret scanning:** [trufflehog](https://github.com/trufflesecurity/trufflehog) is installed via Brew so I can scan for leaked credentials manually.
+* **Global Git Ignore:** `~/.gitignore-global` keeps `.env` files, `.pem`/`.key` certificates, SQLite databases and `.DS_Store` files out of every repository.
+* **CI (GitHub Actions):** `security.yml` runs a TruffleHog scan on every push and pull request to `main`, on top of GitHub's built-in secret scanning, which is also enabled for this repository. I set it up with AI as a guide.
 
 
-## 📦 Deployment & Bootstrapping
+## 📦 Setup
 
-System dependencies & binaries including zsh itself are strictly managed and automated via `Homebrew`. 
+All tools, including zsh itself, are installed with Homebrew.
 
-To replicate this environment:
+To set up this environment on a new Mac (Apple Silicon only: `zshrc` expects Homebrew in `/opt/homebrew`):
 ```bash
 # 1. Install Homebrew
 # 2. Clone this repository
-# 3. Restore all binaries, Casks, etc.:
-brew bundle install --file=Brewfile
+# 3. Install all packages, apps and extensions:
+brew bundle install --file=brew/Brewfile
 
-# 4. Create symlinks for zshrc, gitconfig etc...
-# example: make sure you are in ~/
-ln -s ~/PathToRepository/dotfiles/zsh/zshrc .zshrc
+# 4. Create the symlinks:
+DOTFILES=/path/to/dotfiles   # wherever you cloned it
+
+ln -s $DOTFILES/zsh/zshrc               ~/.zshrc
+ln -s $DOTFILES/zsh/aliases             ~/.zsh_aliases
+ln -s $DOTFILES/git/gitconfig-global    ~/.gitconfig
+ln -s $DOTFILES/git/gitignore-global    ~/.gitignore-global
+ln -s $DOTFILES/ssh/ssh_config          ~/.ssh/config
+ln -s $DOTFILES/ghostty/config          ~/.config/ghostty/config
+ln -s $DOTFILES/helix/languages.toml    ~/.config/helix/languages.toml
 ```
