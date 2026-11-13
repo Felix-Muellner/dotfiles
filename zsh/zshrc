@@ -6,6 +6,9 @@
 # Homebrew path configuration
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Claude
+export PATH="$HOME/.local/bin:$PATH"
+
 # Zoxide Setup
 eval "$(/opt/homebrew/bin/zoxide init zsh)"
 
