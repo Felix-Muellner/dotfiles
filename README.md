@@ -40,8 +40,9 @@ Also installed (used directly, not aliased): [fd](https://github.com/sharkdp/fd)
 * **SSH:** `HashKnownHosts yes` stores hostnames in `~/.ssh/known_hosts` as hashes, so if the file leaks, nobody can read which servers I connect to. The GitHub `ed25519` key is loaded into the SSH agent and its passphrase is stored in the macOS Keychain.
 * **Secret scanning:** [trufflehog](https://github.com/trufflesecurity/trufflehog) is installed via Brew so I can scan for leaked credentials manually.
 * **Global Git Ignore:** `~/.gitignore-global` keeps `.env` files, `.pem`/`.key` certificates, SQLite databases and `.DS_Store` files out of every repository.
-* **CI (GitHub Actions):** `security.yml` runs a TruffleHog scan on every push and pull request to `main`, on top of GitHub's built-in secret scanning, which is also enabled for this repository. I set it up with AI as a guide.
-
+* **CI (GitHub Actions):** The [Secret Scan](https://github.com/Felix-Muellner/dotfiles/blob/main/.github/workflows/secret-scan.yml) workflow runs two TruffleHog jobs, on top of GitHub's built-in secret scanning, which is also enabled for this repository. I set it up with AI as a guide.
+  * **Diff scan:** on every push and pull request (any branch), it scans the new commits and fails only on verified (confirmed live) secrets.
+  * **Full history scan:** every Sunday at 02:00 UTC, and on demand via a manual trigger, it scans the whole Git history and fails on any finding: verified, unverified or unknown.
 
 ## 📦 Setup
 
