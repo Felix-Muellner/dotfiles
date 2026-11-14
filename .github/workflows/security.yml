@@ -1,23 +1,45 @@
-name: Security Scan
+name: Secret Scan
 
 on:
   push:
   pull_request:
+  schedule:
+    - cron: '0 2 * * 0'
   workflow_dispatch:
 
 jobs:
-  trufflehog:
-    name: TruffleHog Scan
+  # 1. Fast diff scan on every push and PR
+  diff-scan:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - name: TruffleHog OSS
+      - name: TruffleHog OSS (Diff)
         uses: trufflesecurity/trufflehog@31ce31ee1abbcc7dc8eee5764c17121c3044c8b2 # v3.99.7
         with:
           path: ./
           version: 3.99.7
           extra_args: --only-verified
+
+  # 2. Full history scan on weekly schedule or manual trigger
+  full-scan:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7  
+        with:
+          fetch-depth: 0
+
+      - name: TruffleHog OSS (Full History)
+        uses: trufflesecurity/trufflehog@31ce31ee1abbcc7dc8eee5764c17121c3044c8b2 # v3.99.7
+        with:
+          path: ./
+          base: ""
+          version: 3.99.7
+          extra_args: --results=verified,unknown,unverified --fail
+                  
