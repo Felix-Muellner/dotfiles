@@ -65,4 +65,5 @@ ln -s $DOTFILES/git/gitignore-global    ~/.gitignore-global
 ln -s $DOTFILES/ssh/ssh_config          ~/.ssh/config
 ln -s $DOTFILES/ghostty/config          ~/.config/ghostty/config
 ln -s $DOTFILES/helix/languages.toml    ~/.config/helix/languages.toml
+ln -s $DOTFILES/helix/config.toml       ~/.config/helix/config.toml
 ```
